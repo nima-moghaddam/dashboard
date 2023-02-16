@@ -1,9 +1,14 @@
+import Main from './component/Main/index';
+import Navbar from './component/Navbar/index';
+import Sidebar from './component/Sidebar/index';
 
 function App() {
   return (
-    <div>
-      dashboard
-    </div>
+    <>
+      <Navbar />
+      <Sidebar />
+      <Main/>
+    </>
   );
 }
 
