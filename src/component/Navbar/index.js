@@ -1,9 +1,22 @@
-import React from 'react'
+import React from "react";
+import { Box } from "@mui/material";
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <Box
+      sx={{
+        bgcolor: 'primary.light',
+        width: "100%",
+        position: "fixed",
+        height: 70,
+        display: "flex",
+        alignItems: "center",
+        zIndex: '10',
+      }}
+    >
+      Navbar
+    </Box>
+  );
+};
 
-export default Navbar
+export default Navbar;

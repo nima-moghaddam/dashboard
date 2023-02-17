@@ -1,8 +1,11 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div>Sidebar</div>
+    <Box sx={{ bgcolor: 'secondary.main', width: '250px', height: '100vh' }}>
+      Sidebar
+    </Box>
   )
 }
 

@@ -1,8 +1,11 @@
+import { Box } from '@mui/material'
 import React from 'react'
 
 const Main = () => {
   return (
-    <div>Main</div>
+    <Box sx={{ bgcolor: 'primary.main', height: '100%', paddingTop: '90px', paddingX: '30px' }}>
+      Main
+    </Box>
   )
 }
 
