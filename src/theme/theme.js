@@ -19,7 +19,7 @@ export const theme = createTheme({
             main:'#22baa5'
         }
     },
-    typography: {
+    typography: { // will be added later!
         fontFamily: [
             'Poppins', 'sans-serif'
         ]
