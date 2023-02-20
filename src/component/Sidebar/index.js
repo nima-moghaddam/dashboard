@@ -1,11 +1,16 @@
-import { Box, Drawer, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Collapse } from '@mui/material'
+import {
+  Box, Drawer, Typography, List, ListItem, ListItemButton,
+  ListItemIcon, ListItemText, Collapse, useMediaQuery, useTheme
+} from '@mui/material'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ConstructionIcon from '@mui/icons-material/Construction';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { ExpandMore } from '@mui/icons-material';
+import { menuContext } from './../../context/MenuContext';
+
 
 const label = [
   { menu: { name: 'Home', icon: <DashboardIcon />}, subMenu: [] },
@@ -16,6 +21,8 @@ const label = [
 const Content = () => {
   const [menuIndex, setMenuIndex] = useState(0)
   const [subMenuIndex, setSubMenuIndex] = useState('')
+  const {toggleMenu} = useContext(menuContext)
+
 
   const handleClickMenu = (index) => {
     if (menuIndex === index) {
@@ -24,6 +31,7 @@ const Content = () => {
       setMenuIndex(index)
     }
     setSubMenuIndex('')
+    label[index].subMenu.length === 0 && toggleMenu()
   }
 
 
@@ -60,7 +68,7 @@ const Content = () => {
               <List component="div" disablePadding>
                 {item.subMenu.map((subItem, subIndex) => (
                   <ListItemButton
-                    onClick={()=>{setSubMenuIndex(subIndex)}}
+                    onClick={() => { setSubMenuIndex(subIndex);toggleMenu() }}
                     key={subItem}
                     sx={{
                       pr: 4,
@@ -97,14 +105,21 @@ const Content = () => {
  
 
 const Sidebar = () => {
+  const theme = useTheme();
+  const inBreakpoint = useMediaQuery(theme.breakpoints.up('md'));
+  const {toggleMenu, openMenu} = useContext(menuContext)
+
   return (
-    <Box component="nav" sx={{ flexShrink: { sm: 0 }, height: '100vh', width: { xs: 0, sm: '250px' } }}>
+    <Box component="nav" sx={{ flexShrink: { sm: 0 }, height: '100vh', width: { xs: 0, md: '250px' } }}>
       <Drawer
-          variant="permanent"
-          PaperProps={{ sx: {backgroundColor: 'secondary.main'} }}
-          sx={{ display: { xs: 'none', sm: 'block' }, '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '250px'} }}
-          anchor={'right'}
-          open
+          variant={inBreakpoint ? 'permanent' : 'temporary'}
+          PaperProps={{ sx: {backgroundColor: 'secondary.main', left: "unset", right: '0' } }}
+          sx={{
+            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '250px' }
+          }}
+          anchor={'left'}
+          open={openMenu}
+          onClose={toggleMenu}
       >
         <Typography variant='h5' sx={{ color: 'primary.light', textAlign: 'center', padding: '1rem' }}>Dashboard</Typography>
         <Content/>
