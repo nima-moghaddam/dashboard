@@ -12,6 +12,7 @@ export const theme = createTheme({
         secondary: {
             // sidebar, btn ....
             main: '#405189',
+            text: '#8f9bc2'
         },
         success: {
             // btn, btn+hover ....
