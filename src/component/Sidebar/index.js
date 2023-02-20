@@ -65,18 +65,24 @@ const Content = () => {
                     sx={{
                       pr: 4,
                       '&:hover': {color: 'primary.light'},
-                      '&:hover .child': {color: 'primary.light'}
+                      '&:hover .child': { color: 'primary.light' },
+                      color: `${subIndex === subMenuIndex ? 'primary.light' : 'secondary.text'}`
                     }}
                   >
                     <ListItemIcon  sx={{minWidth: '25px'}}>
                       <HorizontalRuleIcon
                         className='child'
-                        sx={{ fontSize: 10, color: `${subIndex === subMenuIndex ? 'primary.light' : 'secondary.text'}` }}
+                        sx={{
+                          fontSize: 13,
+                          color: `${subIndex === subMenuIndex ? 'primary.light' : 'secondary.text'}`,
+                        }}
                       />
                     </ListItemIcon>
                     <ListItemText
                       primary={subItem}
-                      sx={{ textAlign: 'right', color: `${subIndex === subMenuIndex? 'primary.light' : 'secondary.text'}` }}
+                      sx={{
+                        textAlign: 'right',
+                      }}
                     />
                   </ListItemButton>
                 ))}
