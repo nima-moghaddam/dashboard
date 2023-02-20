@@ -8,15 +8,6 @@ export const MenuContextProvider = ({ children }) => {
     const toggleMenu = (event) => {
         setOpenMenu(!openMenu)
      }
-  
-  
-    // const toggleDrawer = (anchor, open) => (event) => {
-    //   if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-    //     return;
-    //   }
-
-    //   setState({ ...state, [anchor]: open });
-    // };
 
   return (
     <menuContext.Provider value={{ openMenu, setOpenMenu, toggleMenu }}>
