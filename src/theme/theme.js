@@ -8,7 +8,8 @@ export const theme = createTheme({
             // bg, card, main ....
             light: '#ffffff',
             main: '#f3f3f9',
-            dark:  '#5f5b59'
+            dark: '#5f5b59',
+            semiDark: '#747684'
         },
         secondary: {
             // sidebar, btn ....
