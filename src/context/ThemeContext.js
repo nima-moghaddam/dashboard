@@ -24,7 +24,8 @@ export const ThemeContextProvider = ({ children }) => {
               navWhite: '#ffffff',
               semiWhite: '#f3f3f9',
               gray: '#5f5b59',
-              semiGray: '#747684'
+              semiGray: '#747684',
+              hover: '#f3f6f9'
             },
             secondary: {
               main:'#3577f1',
@@ -55,7 +56,8 @@ export const ThemeContextProvider = ({ children }) => {
               navWhite: '#292e32',
               semiWhite: '#1a1d21',
               gray: '#c8d4da',
-              semiGray: '#747684'
+              semiGray: '#747684',
+              hover: '#2c3136'
             },
              secondary: {
               main:'#3577f1',
