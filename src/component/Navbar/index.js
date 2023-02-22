@@ -1,8 +1,4 @@
 import React, { useContext, useState } from "react";
-import {
-  AppBar, Avatar, Box, IconButton,
-  Toolbar, Popover
-} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import { menuContext } from './../../context/MenuContext';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
@@ -12,13 +8,21 @@ import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import ShareIcon from '@mui/icons-material/Share';
 import profile_pic from '../../assets/img/profile.png'
 import SearchIcon from '@mui/icons-material/Search';
+import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
 import Search from "./Search";
+import { themeContext } from "../../context/ThemeContext";
+import {
+  AppBar, Avatar, Box, IconButton,
+  Toolbar, Popover
+} from "@mui/material";
+
 
 const Navbar = () => {
   const [fullscreen, setFullscreen] = useState(false)
   const [anchorEl, setAnchorEl] = useState(null);
 
   const { toggleMenu } = useContext(menuContext)
+  const { toggleColorMode, mode } = useContext(themeContext)
 
   const classes = { color: 'primary.dark', '&:hover': { backgroundColor: 'secondary.opaque', color: 'secondary.blueish' } }
   
@@ -55,7 +59,10 @@ const Navbar = () => {
           </Box>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <IconButton sx={{ml: 2, display: {xs: 'inline-flex', md: 'none'}, ...classes}} onClick={event => setAnchorEl(event.currentTarget)}>
+          <IconButton
+            sx={{ ml: 2, display: { xs: 'inline-flex', md: 'none' }, ...classes }}
+            onClick={event => setAnchorEl(event.currentTarget)}
+          >
             <SearchIcon />
           </IconButton>
           <Popover
@@ -73,18 +80,15 @@ const Navbar = () => {
               }
             }}
             onClose={() => setAnchorEl(null)}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
+            anchorOrigin={{ vertical: 'bottom',horizontal: 'left'}}
           >
             <Search />
           </Popover>
           <IconButton sx={{ ml: 2, ...classes}} onClick={handleFullscreen}>
             {fullscreen ? <FullscreenExitIcon /> : <FullscreenIcon/>}
           </IconButton>
-          <IconButton  sx={{ml: 2, ...classes}}>
-            <DarkModeOutlinedIcon />
+          <IconButton sx={{ml: 2, ...classes}} onClick={toggleColorMode}>
+            {mode === 'light'? <DarkModeOutlinedIcon />: <LightModeOutlinedIcon/> }
           </IconButton>
           <IconButton  sx={{ml: 2, ...classes}}>
             <NotificationsNoneIcon />
