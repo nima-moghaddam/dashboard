@@ -38,12 +38,12 @@ const Content = () => {
   return (
     <div>
       {label.map((item, index) => (
-        <List sx={{color: 'secondary.text', cursor: 'pointer'}}  >
+        <List sx={{color: 'text.semiBlue', cursor: 'pointer'}}  >
           <ListItem
             sx={{
-              color: `${index === menuIndex ? 'primary.light' : 'secondary.text'}`,
-              '&:hover': {color: 'primary.light'},
-              '&:hover .child': {color: 'primary.light'}
+              color: `${index === menuIndex ? 'text.white' : 'text.semiBlue'}`,
+              '&:hover': {color: 'text.white'},
+              '&:hover .child': {color: 'text.white'}
             }}
             key={item.menu.name}
             disablePadding
@@ -51,7 +51,7 @@ const Content = () => {
             <ListItemButton onClick={()=>{handleClickMenu(index)}}>
               <ListItemIcon
                 className="child"
-                sx={{ minWidth: '35px', color: `${index === menuIndex ? 'primary.light' : 'secondary.text'}` }}
+                sx={{ minWidth: '35px', color: `${index === menuIndex ? 'text.white' : 'text.semiBlue'}` }}
               >
                 {item.menu.icon}
               </ListItemIcon>
@@ -72,9 +72,9 @@ const Content = () => {
                     key={subItem}
                     sx={{
                       pr: 4,
-                      '&:hover': {color: 'primary.light'},
-                      '&:hover .child': { color: 'primary.light' },
-                      color: `${subIndex === subMenuIndex ? 'primary.light' : 'secondary.text'}`
+                      '&:hover': {color: 'text.white'},
+                      '&:hover .child': { color: 'text.white' },
+                      color: `${subIndex === subMenuIndex ? 'text.white' : 'text.semiBlue'}`
                     }}
                   >
                     <ListItemIcon  sx={{minWidth: '25px'}}>
@@ -82,7 +82,7 @@ const Content = () => {
                         className='child'
                         sx={{
                           fontSize: 13,
-                          color: `${subIndex === subMenuIndex ? 'primary.light' : 'secondary.text'}`,
+                          color: `${subIndex === subMenuIndex ? 'text.white' : 'text.semiBlue'}`,
                         }}
                       />
                     </ListItemIcon>
@@ -113,7 +113,7 @@ const Sidebar = () => {
     <Box component="nav" sx={{ flexShrink: { sm: 0 }, height: '100vh', width: { xs: 0, md: '250px' } }}>
       <Drawer
           variant={inBreakpoint ? 'permanent' : 'temporary'}
-          PaperProps={{ sx: {backgroundColor: 'secondary.main', left: "unset", right: '0' } }}
+          PaperProps={{ sx: {backgroundColor: 'secondary.semiBlue', left: "unset", right: '0' } }}
           sx={{
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: '250px' }
           }}
@@ -121,7 +121,7 @@ const Sidebar = () => {
           open={openMenu}
           onClose={toggleMenu}
       >
-        <Typography variant='h5' sx={{ color: 'primary.light', textAlign: 'center', padding: '1rem' }}>Dashboard</Typography>
+        <Typography variant='h5' sx={{ color: 'text.white', textAlign: 'center', padding: '1rem' }}>Dashboard</Typography>
         <Content/>
       </Drawer>
     </Box>

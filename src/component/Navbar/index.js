@@ -24,7 +24,7 @@ const Navbar = () => {
   const { toggleMenu } = useContext(menuContext)
   const { toggleColorMode, mode } = useContext(themeContext)
 
-  const classes = { color: 'primary.dark', '&:hover': { backgroundColor: 'secondary.opaque', color: 'secondary.blueish' } }
+  const classes = { color: 'primary.gray', '&:hover': { backgroundColor: 'secondary.lightBlue', color: 'secondary.blue' } }
   
   const handleFullscreen = () => {
     if (!fullscreen) {
@@ -40,7 +40,6 @@ const Navbar = () => {
     <AppBar
       position="fixed"
       sx={{
-        bgcolor: 'primary.light',
         width: { xs: '100%', md: `calc(100% - 250px)` },
         mr: {md: '250px'},
         height: 70,
@@ -49,7 +48,7 @@ const Navbar = () => {
       }}
     >
       
-      <Toolbar sx={{ minHeight: '70px !important', display:'flex', justifyContent: 'space-between' }}>
+      <Toolbar sx={{ minHeight: '70px !important', display:'flex', justifyContent: 'space-between', backgroundColor: 'primary.navWhite', }}>
         <Box>
           <IconButton sx={{ mx: 2, display: { md: 'none' }, ...classes }} onClick={toggleMenu}>
               <MenuIcon />
@@ -76,7 +75,7 @@ const Navbar = () => {
                 width: '100%',
                 maxWidth: '100%',
                 left: '0 !important',
-                backgroundColor: 'primary.light'
+                backgroundColor: 'primary.navWhite'
               }
             }}
             onClose={() => setAnchorEl(null)}

@@ -19,35 +19,60 @@ export const ThemeContextProvider = ({ children }) => {
         ? {
             // palette values for light mode
             primary: {
-              light: '#ffffff',
-              main: '#f3f3f9',
-              dark: '#5f5b59',
-              semiDark: '#747684'
+              main:'#ffffff',
+              white: '#ffffff',
+              navWhite: '#ffffff',
+              semiWhite: '#f3f3f9',
+              gray: '#5f5b59',
+              semiGray: '#747684'
             },
             secondary: {
-              main: '#405189',
-              text: '#8f9bc2',
-              blueish: '#3577f1',
-              opaque: '#eaf1fe'
-                
+              main:'#3577f1',
+              blue: '#3577f1',
+              semiBlue: '#405189',
+              lightBlue: '#eaf1fe'
             },
             success: {
               light: '#dbecf0',
               main:'#22baa5'
+            },
+            text: {
+              dark: '#49505f',
+              black: '#495057',
+              grey: '#8e8f9c',
+              green: '#22baa5',
+              red: '#f07187',
+              semiBlue: '#8f9ed0',
+              white: '#ffffff',
+              semiWhite: '#ccd0df'
             }
           }
         : {
             // palette values for dark mode
             primary: {
-              light: '#292e32',
-              main: '#1a1d21',
-              dark: '#ced4da'
+              main:'#212529',
+              white: '#212529',
+              navWhite: '#292e32',
+              semiWhite: '#1a1d21',
+              gray: '#c8d4da',
+              semiGray: '#747684'
             },
-            secondary: {
-              main: '#212529',
-              blueish: '#3577f1',
-              opaque: '#eaf1fe'
+             secondary: {
+              main:'#3577f1',
+              blue: '#3577f1',
+              semiBlue: '#212529',
+              lightBlue: '#232d3e'
             },
+            text: {
+              dark: '#ced4da',
+              black: '#abb1b7',
+              grey: '#8e8f9c',
+              green: '#22baa5',
+              red: '#f07187',
+              semiBlue: '#5a5e67',
+              white: '#ffffff',
+              semiWhite: '#ccd0df'
+            }
           }
       ),
     },

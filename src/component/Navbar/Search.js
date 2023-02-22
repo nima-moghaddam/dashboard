@@ -9,7 +9,7 @@ const Search = () => {
             height: '38px',
             width: {xs: '100%', md: 'unset'},
             outline: 'none',
-            backgroundColor: 'primary.main',
+            backgroundColor: 'primary.semiWhite',
             borderRadius: '0.25rem',
         }}
         placeholder= 'جستجو ...'
@@ -17,7 +17,7 @@ const Search = () => {
             disableUnderline: true ,
             startAdornment: (
             <InputAdornment position="start" sx={{ ml: 1.5, mt:0.5 }}>
-                <SearchIcon sx={{fontSize: '20px', color: 'primary.semiDark'}} />
+                <SearchIcon sx={{fontSize: '20px', color: 'primary.semiGray'}} />
             </InputAdornment>
             ),
         }}
