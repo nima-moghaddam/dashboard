@@ -8,7 +8,7 @@ import React, { useState } from "react";
 
 
 
-const Search = ({classes}) => {
+const SearchBar = ({classes}) => {
   const [open, setOpen] = useState(null);
 
   return (
@@ -43,4 +43,4 @@ const Search = ({classes}) => {
   )
 }
 
-export default Search
+export default SearchBar

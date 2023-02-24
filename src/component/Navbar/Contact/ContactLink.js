@@ -35,12 +35,12 @@ const ContactLink = ({classes}) => {
                 open={Boolean(open)}
                 PaperProps={{
                     sx: {
-                    mt: 1.8,
-                    boxShadow: '0 5px 10px rgb(30 32 37 / 12%)',
-                    width: {xs: '100%', sm: '320px'},
-                    maxWidth: '100%',
-                    backgroundColor: 'primary.navWhite',
-                    left: { xs: '0 !important', sm: '80px !important' },
+                        mt: 1.8,
+                        boxShadow: '0 5px 10px rgb(30 32 37 / 12%)',
+                        width: {xs: '100%', sm: '320px'},
+                        maxWidth: '100%',
+                        backgroundColor: 'primary.navWhite',
+                        left: { xs: '0 !important', sm: '80px !important' },
                     }
                 }}
                 onClose={() => setOpen(null)}

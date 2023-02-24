@@ -5,13 +5,14 @@ import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import profile_pic from '../../assets/img/profile.png'
 import LightModeOutlinedIcon from '@mui/icons-material/LightModeOutlined';
-import Search from "./Search/Search";
 import { themeContext } from "../../context/ThemeContext";
 import { AppBar, Avatar, Box, IconButton, Toolbar } from "@mui/material";
 import ContactLink from "./Contact/ContactLink";
 import SearchInput from "./Search/SearchInput";
+import ProfileDropdown from "./Profile/ProfileDropdown";
+import SearchBar from "./Search/SearchBar";
+
 
 
 const Navbar = () => {
@@ -54,7 +55,7 @@ const Navbar = () => {
           </Box>
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Search classes={classes} />
+          <SearchBar classes={classes} />
           <IconButton sx={{ ml: 2, ...classes}} onClick={handleFullscreen}>
             {fullscreen ? <FullscreenExitIcon /> : <FullscreenIcon/>}
           </IconButton>
@@ -65,7 +66,7 @@ const Navbar = () => {
             <NotificationsNoneIcon />
           </IconButton>
           <ContactLink classes={classes} />
-          <Avatar alt="profile avatar" src={profile_pic} sx={{cursor: 'pointer'}} />
+          <ProfileDropdown />
         </Box>
       </Toolbar>
     </AppBar>
