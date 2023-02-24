@@ -13,9 +13,9 @@ function App() {
         <Sidebar />
         <Box sx={{width: '100%'}} component={'main'}>
           <Navbar />
-            <Routes>
-              <Route path="/" element={<Main />} />
-            </Routes>
+          <Routes>
+            <Route path="/" element={<Main />} />
+          </Routes>
         </Box>
       </Box>
       
